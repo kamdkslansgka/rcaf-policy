@@ -1,0 +1,52 @@
+## Simulation Results (RoboTwin)
+
+### Task: Diverse
+
+<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+  <video src="/rcaf-policy/videos/robotwin/diverse/sim_video_eval_3_latest_600_3.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/diverse/sim_video_eval_4_latest_600_4.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/diverse/sim_video_eval_70_latest_600_70.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+</div>
+
+<br/>
+
+### Task: Dual
+
+<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+  <video src="/rcaf-policy/videos/robotwin/dual/sim_video_eval_15_latest_1000_15.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/dual/sim_video_eval_61_latest_1000_61.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/dual/sim_video_eval_9_latest_1000_9.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+</div>
+
+<br/>
+
+### Task: Empty
+
+<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+  <video src="/rcaf-policy/videos/robotwin/empty/sim_video_eval_32_latest_1000_32.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/empty/sim_video_eval_49_latest_1000_49.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/empty/sim_video_eval_8_latest_1000_8.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+</div>
+
+<br/>
+
+### Task: Pick
+
+<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+  <video src="/rcaf-policy/videos/robotwin/pick/sim_video_eval_18_latest_1000_18.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/pick/sim_video_eval_5_latest_1000_5.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/pick/sim_video_eval_83_latest_1000_83.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+</div>
+
+<br/>
+
+### Task: Shoe
+
+<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+  <video src="/rcaf-policy/videos/robotwin/shoe/sim_video_eval_10_latest_1000_10.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/shoe/sim_video_eval_1_latest_1000_1.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/shoe/sim_video_eval_8_latest_1000_8.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+</div>
+
+<br/>
+

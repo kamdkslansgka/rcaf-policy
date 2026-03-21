@@ -1,0 +1,169 @@
+## RoboTwin 2.0 Benchmark Demonstrations
+
+<div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/adjust/episode40.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Adjust</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/beat/episode17.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Beat</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/beat/episode41.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Beat</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/click/episode15.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Click</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/click/episode23.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Click</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/click_bell/episode49.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Click Bell</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/click_bell/episode9.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Click Bell</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/dump/episode3.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Dump</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/dump/episode69.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Dump</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/dump/episode7.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Dump</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/handover/episode1.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Handover</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/handover/episode54.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Handover</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/lift/episode13.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Lift</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/lift/episode27.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Lift</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/move/episode12.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Move</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/move/episode33.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Move</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/move_play/episode19.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Move Play</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/move_play/episode20.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Move Play</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/open/episode10.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Open</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/open/episode34.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Open</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/open/episode8.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Open</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/pick_diverse/episode46.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Pick Diverse</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/pick_diverse/episode65.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Pick Diverse</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/pick_dual/episode9.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Pick Dual</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/place_bread/episode37.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Place Bread</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/place_burger/episode18.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Place Burger</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/place_burger/episode98.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Place Burger</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/place_object/episode17.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Place Object</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/place_object/episode5.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Place Object</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/place_object/episode8.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Place Object</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/press_stapler/episode9.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Press Stapler</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/put_objecy/episode26.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Put Objecy</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/put_objecy/episode45.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Put Objecy</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/shake_bottle/episode1.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Shake Bottle</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/stack_bowls/episode10.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Stack Bowls</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/stack_bowls/episode22.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Stack Bowls</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/stack_bowls/episode98.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Stack Bowls</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/stamp/episode22.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Stamp</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/stamp/episode54.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Stamp</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/turn/episode0.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Turn</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/turn/episode18.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Turn</figcaption>
+  </figure>
+</div>
+

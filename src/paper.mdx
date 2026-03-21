@@ -1,0 +1,332 @@
+---
+title: "One Step is All You Need: High-Fidelity Visuomotor Policy via Recursive Consistent Action Flow"
+authors:
+  - name: YuRan Chen
+    institution: Anhui University of Science and Technology
+conference: Conference Name
+notes:
+  - symbol: "*"
+    text: author note one
+  - symbol: †
+    text: author note two
+links:
+  - name: Paper
+    url: https://github.com/RomanHauksson/academic-project-astro-template
+    icon: ri:file-pdf-2-line
+  - name: Code
+    url: https://github.com/kamdkslansgka/rcaf-policy
+    icon: ri:github-line
+  - name: arXiv
+    url: https://github.com/RomanHauksson/academic-project-astro-template
+    icon: academicons:arxiv
+
+theme: device
+favicon: favicon.svg
+description: Simple project page template for your research paper, built with Astro and Tailwind
+thumbnail: screenshot-light.png
+---
+
+import HighlightedSection from "./components/HighlightedSection.astro";
+import Figure from "./components/Figure.astro";
+import Picture from "./components/Picture.astro";
+import TwoColumns from "./components/TwoColumns.astro";
+
+<Figure>
+  <img slot="figure" src="/rcaf-policy/image/motivation.jpg" alt="Motivation of RCAF." className="w-full rounded-lg shadow-sm border border-gray-100" />
+  <Fragment slot="caption">**Figure 1. Empirical Analysis of Execution Dynamics and Stability.** <br/>
+  Compared to the severe oscillations of standard 1-step baselines, our **RCAF (1 NFE)** policy strictly adheres to the ground-truth action manifold **(c)** and temporal dynamics **(d)**. The error heatmaps **(b)** demonstrate that our method maintains near-zero deviation over time, while the velocity spectrum **(e)** confirms it effectively suppresses artificial noise without losing delicate, high-frequency manipulation details..</Fragment>
+</Figure>
+<br/>
+
+<HighlightedSection>
+
+## Abstract
+
+Generative models, such as Diffusion and Flow Matching, have emerged as the dominant paradigm for robotic visuomotor policies. However, their reliance on multi-step iterative solvers introduces prohibitive inference latency, severely hindering high-frequency closed-loop control. While recent single-step acceleration methods attempt to force these curved action manifolds into straight trajectories, they inevitably suffer from catastrophic spatial truncation errors, low-pass filtering effects (loss of high-frequency details), and mode averaging in multimodal scenarios. To overcome these inherent bottlenecks, we propose a novel single-step generative framework. First, we introduce **Recursive Consistent Action Flow (RCAF)**, which leverages a high-order recursive estimation to compute an explicit residual heading correction, fundamentally neutralizing spatial truncation errors. Second, to recover delicate manipulation precision, we propose **Dual-Timestep Frequency Consistency (DTFC)**, which employs an adaptive spectral constraint to naturally enforce a coarse-to-fine optimization paradigm. Finally, a **Contrastive Flow Matching (CFM)** mechanism is incorporated to decouple interwoven multimodal vector fields, ensuring collision-free phase space trajectories. Extensive experiments across 2D and 3D bimanual/dexterous manipulation benchmarks (RoboTwin, Adroit, DexArt), as well as real-world hardware deployments, demonstrate our framework's superiority. Utilizing only a single forward pass (1 NFE), our method not only significantly outperforms 10-step state-of-the-art baselines but also eclipses massive Vision-Language-Action (VLA) foundation models, unlocking high-fidelity, ultra-fast robotic control.
+
+</HighlightedSection>
+
+<Figure>
+  <img slot="figure" src="/rcaf-policy/image/method.jpg" alt="Overview of the RCAF framework." className="w-full rounded-lg shadow-sm border border-gray-200" />
+  <Fragment slot="caption">Figure 2. Overview of the proposed framework. (a) The multimodal Diffusion Transformer (DiT) policy network architecture. (b) Recursive Consistent Action Flow (RCAF) for mitigating spatial truncation errors via high-order residual correction. (c) Contrastive Flow Matching (CFM) for decoupling interwoven flow fields and resolving mode averaging. (d) Dual-Timestep Frequency Consistent (DTFC) for adaptive high-frequency detail recovery.).</Fragment>
+</Figure>
+
+<br/>
+
+
+## Real-World Generalization Results
+
+### Task: Pick and Place
+
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+  <div className="flex flex-col">
+    <h4 className="text-center font-semibold text-gray-700 mb-2">Diffusion Policy (DP)</h4>
+    <video src="/rcaf-policy/videos/real_world/pick_place/dp_pick_and_place.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-200" />
+  </div>
+  <div className="flex flex-col">
+    <h4 className="text-center font-semibold text-gray-700 mb-2">π₀ (Pi0)</h4>
+    <video src="/rcaf-policy/videos/real_world/pick_place/pi0-pick_and_place.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-200" />
+  </div>
+  <div className="flex flex-col">
+    <h4 className="text-center font-bold text-blue-600 mb-2">RCAF (Ours)</h4>
+    <video src="/rcaf-policy/videos/real_world/pick_place/ours_pick_and_place.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-lg border-2 border-blue-200" />
+  </div>
+</div>
+
+<br/>
+
+### Task: Grasping and Pouring Bottle
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div className="flex flex-col">
+    <h4 className="text-center font-semibold text-gray-700 mb-2">Diffusion Policy (DP)</h4>
+    <video src="/rcaf-policy/videos/real_world/pouring/DP.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-200" />
+  </div>
+  <div className="flex flex-col">
+    <h4 className="text-center font-bold text-blue-600 mb-2">RCAF (Ours)</h4>
+    <video src="/rcaf-policy/videos/real_world/pouring/ours.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-lg border-2 border-blue-200" />
+  </div>
+</div>
+
+<br/>
+
+### Task: Dynamic Throwing
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div className="flex flex-col">
+    <h4 className="text-center font-semibold text-gray-700 mb-2">Diffusion Policy (DP)</h4>
+    <video src="/rcaf-policy/videos/real_world/throwing/DP.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-200" />
+  </div>
+  <div className="flex flex-col">
+    <h4 className="text-center font-bold text-blue-600 mb-2">RCAF (Ours)</h4>
+    <video src="/rcaf-policy/videos/real_world/throwing/ours.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-lg border-2 border-blue-200" />
+  </div>
+</div>
+
+<br/>
+
+
+
+
+## Simulation Results (RoboTwin)
+
+### Task: Diverse_bottles_pick.
+
+<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+  <video src="/rcaf-policy/videos/robotwin/diverse/sim_video_eval_3_latest_600_3.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/diverse/sim_video_eval_4_latest_600_4.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/diverse/sim_video_eval_70_latest_600_70.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+</div>
+
+<br/>
+
+### Task: Dual_bottles_pick_hard
+
+<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+  <video src="/rcaf-policy/videos/robotwin/dual/sim_video_eval_15_latest_1000_15.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/dual/sim_video_eval_61_latest_1000_61.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/dual/sim_video_eval_9_latest_1000_9.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+</div>
+
+<br/>
+
+### Task: Empty_cup_place
+
+<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+  <video src="/rcaf-policy/videos/robotwin/empty/sim_video_eval_32_latest_1000_32.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/empty/sim_video_eval_49_latest_1000_49.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/empty/sim_video_eval_8_latest_1000_8.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+</div>
+
+<br/>
+
+### Task: Pick_apple_messy
+
+<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+  <video src="/rcaf-policy/videos/robotwin/pick/sim_video_eval_18_latest_1000_18.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/pick/sim_video_eval_5_latest_1000_5.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/pick/sim_video_eval_83_latest_1000_83.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+</div>
+
+<br/>
+
+### Task: Shoe_place
+
+<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+  <video src="/rcaf-policy/videos/robotwin/shoe/sim_video_eval_10_latest_1000_10.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/shoe/sim_video_eval_1_latest_1000_1.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+  <video src="/rcaf-policy/videos/robotwin/shoe/sim_video_eval_8_latest_1000_8.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm" />
+</div>
+
+<br/>
+
+
+## RoboTwin 2.0 Benchmark Demonstrations
+
+<div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/adjust/episode40.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Adjust Bottle</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/beat/episode17.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Beat Block Hammer</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/beat/episode41.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Beat Block Hammer</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/click/episode15.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Click Alarmclock</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/click/episode23.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Click Alarmclock</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/click_bell/episode49.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Click Bell</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/click_bell/episode9.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Click Bell</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/dump/episode3.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Dump Bin Bigbin</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/dump/episode69.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Dump Bin Bigbin</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/dump/episode7.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Dump Bin Bigbin</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/handover/episode54.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Handover Block</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/handover/episode34.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Handover Block</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/lift/episode13.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Lift Pot</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/lift/episode27.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Lift Pot</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/move/episode12.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Move Can Pot</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/move/episode33.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Move Can Pot</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/move_play/episode19.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Move Playingcard Away</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/open/episode10.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Open Laptop</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/open/episode34.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Open Laptop</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/open/episode8.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Open Laptop</figcaption>
+  </figure>
+    <figure>
+    <video src="/rcaf-policy/videos/robotwin2/pick_diverse/episode12.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Pick Diverse Bottles</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/pick_diverse/episode46.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Pick Diverse Bottles</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/pick_dual/episode9.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Pick Dual Bottles</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/place_bread/episode38.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Place Bread Basket</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/place_burger/episode18.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Place Burger Fries</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/place_burger/episode98.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Place Burger Fries</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/place_object/episode17.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Place Object Basket</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/place_object/episode5.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Place Object Basket</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/place_object/episode8.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Place Object Basket</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/press_stapler/episode9.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Press Stapler</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/put_objecy/episode26.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Put Object Cabinet</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/put_objecy/episode45.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Put Object Cabinet</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/shake_bottle/episode47.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Shake Bottle Horizontally</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/stack_bowls/episode10.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Stack Bowls Three</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/stack_bowls/episode22.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Stack Bowls Three</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/stack_bowls/episode98.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Stack Bowls Three</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/stamp/episode22.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Stamp Seal</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/stamp/episode54.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Stamp Seal</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/turn/episode0.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Turn Switch</figcaption>
+  </figure>
+  <figure>
+    <video src="/rcaf-policy/videos/robotwin2/turn/episode18.mp4" autoPlay loop muted playsInline className="w-full rounded-lg shadow-sm border border-gray-100" />
+    <figcaption className="text-center text-sm mt-2 text-gray-700 font-medium">Turn Switch</figcaption>
+  </figure>
+</div>
+
+<Figure>
+  <img slot="figure" src="/rcaf-policy/image/final_chart.png" alt="Overview of the RCAF framework." className="w-full rounded-lg shadow-sm border border-gray-200" />
+  <Fragment slot="caption">Figure 2. Performance Comparison with SOTA Methods.The bar chart illustrates the average success rates of our approach compared to various state-of-the-art baselines across five manipulation benchmarks. All reported results are evaluated using image-based observations. Our method consistently achieves superior performance while requiring significantly fewer inference steps (NFE=1).</Fragment>
+</Figure>
