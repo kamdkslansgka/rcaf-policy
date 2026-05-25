@@ -22,3 +22,10 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# local debugging / helper scripts
+/1.py
+/2.py
+/3.py
+/scripts/
+/public/image/final_chart.svg
