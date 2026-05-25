@@ -8,6 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "chart:final": "python scripts/generate_final_chart.py",
     "check": "astro check",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
